@@ -1,11 +1,21 @@
 // Arrays to work on
 var numbers = [1, 12, 4, 18, 9, 7, 11, 3, 101, 5, 6];
 var strings = ["this", "is", "a", "collection", "of", "words"];
+var all_total = [];
 
 // Use the above two arrays and practice array methods
+numbers.forEach(num => {
+all_total = num * 10
 
+})
+
+// map
+var all_total = numbers.map(num => num * 10)
+// filter
+var all_total = numbers.filter(num => num % 2 == 0)
 // Find largest number in numbers
-
+  // using map
+  all_total = numbers.map(value => Math.max.apply(null, numbers) )
 // Find longest string in strings
 
 // Find all the even numbers
