@@ -97,9 +97,37 @@ collect_all()
 console.log(`And i am the REMAINING  "${numbers}"`)// Make a subset of strings array ['a','collection']
 
 // Replace 12 & 18 with 1221 and 1881
+function changeValue(items) {
+  var a = items.indexOf(12);
+  console.log(`This is the indexOf 12 " ${a} "`);
+  items[a] = 1221;
+  var b = items.indexOf(18);
+  console.log(`This is the indexOf 18 " ${b} "`);
+  items[b] = 1881;
+  return (`look i am changed  [${items}] "`)
+}
+changeValue(numbers)
 
+
+
+// or
+function changeValue(i) {
+  return i.reduce((acc, cv) => {
+    cv == 12 ? acc.push(1221) : cv == 18 ? acc.push(1881) : acc.push(cv);
+    return acc;
+  }, []);
+
+}
+changeValue(numbers)
 // Replace words with string in strings array
+function changeValue(i) {
+  return i.reduce((acc, cv) => {
+    cv == "words" ? acc.push("strings")  : acc.push(cv);
+    return acc;
+  }, []);
 
+}
+changeValue(strings)
 // Customers Array
 var customers = [
   { firstname: "Joe", lastname: "Blogs" },
@@ -108,7 +136,24 @@ var customers = [
   { firstname: "Jack", lastname: "White" }
 ];
 // Find all customers whose firstname starts with 'J'
-
+function changeValue(i) {
+  return i.reduce((acc, cv) => {
+    (cv.firstname.charAt(0) == 'J') ? acc.push(cv.firstname) : acc;
+    return acc
+  }, [])
+}
+changeValue(customers)
 // Create new array with firstname and lastname
+function arr(i) {
+  return i.reduce((acc, cv) => {
+    acc.push([cv.firstname, cv.lastname]);
+    return acc;
+  }, [])
+}
+
+let value = arr(customers);
 
 // Sort the array created above alphabetically
+let value = arr(customers);
+
+value.sort()
