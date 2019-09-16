@@ -72,6 +72,14 @@ var words2 = [
   'palace'
 ];
 //Write a function averageWordLength that receives an array of words2 and calculate the average length of the words.
+function words_length(words2) {
+  var b = words2.reduce((acc, cv) => {
+    return acc += cv.length
 
+  }, 0)
+  console.log(Math.round(b / words2.length))
+
+}
+words_length(words2)
 
 
